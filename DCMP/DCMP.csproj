@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <ModType>mod</ModType>
+    <ModName>DCMP</ModName>
+    <ModMain>DCMP.ModEntry</ModMain>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    
+    <!-- Auto-install if developing directly against game -->
+    <AutoInstallMod>true</AutoInstallMod>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DeadCellsCoreModding.MDK" Version="1.0.1" />
+    <ProjectReference Include="..\LiteNetLib-2.0.0\LiteNetLib\LiteNetLib.csproj" />
+    <Reference Include="GameProxy">
+      <HintPath>G:\SteamLibrary\steamapps\common\Dead Cells\coremod\core\mdk\ref\GameProxy.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="HaxeProxy">
+      <HintPath>G:\SteamLibrary\steamapps\common\Dead Cells\coremod\core\mdk\ref\HaxeProxy.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="ModCore">
+      <HintPath>G:\SteamLibrary\steamapps\common\Dead Cells\coremod\core\mdk\ref\ModCore.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="ModCore.Common">
+      <HintPath>G:\SteamLibrary\steamapps\common\Dead Cells\coremod\core\mdk\ref\ModCore.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="HashlinkSharp">
+      <HintPath>G:\SteamLibrary\steamapps\common\Dead Cells\coremod\core\mdk\ref\HashlinkSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Docs\**" />
+    <EmbeddedResource Remove="Docs\**" />
+    <None Remove="Docs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <OutputFiles Include="$(OutputPath)LiteNetLib.dll" />
+    <OutputFiles Include="$(OutputPath)LiteNetLib.pdb" />
+    <None Update="Resources\**\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <!-- Ensure Resources are in MDK output folder -->
+    <Content Include="Resources\**\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>output\$(ModName)\Resources\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Content>
+  </ItemGroup>
+
+  <Target Name="OutputCopy" AfterTargets="Build">
+    <ItemGroup>
+      <OutputCopyFiles Include="$(OutputPath)\output\**\*.*" />
+      <OutputResources Include="Resources\**\*.*" />
+    </ItemGroup>
+    <Message Text="Copying files to game directory..." Importance="high" />
+    <Copy SourceFiles="@(OutputCopyFiles)" DestinationFolder="g:\SteamLibrary\steamapps\common\Dead Cells\coremod\mods\$(ModName)\%(RecursiveDir)" />
+    <Copy SourceFiles="@(OutputResources)" DestinationFolder="g:\SteamLibrary\steamapps\common\Dead Cells\coremod\mods\$(ModName)\Resources\%(RecursiveDir)" />
+    
+    <Message Text="Copying files to test directory..." Importance="high" />
+    <Copy SourceFiles="@(OutputCopyFiles)" DestinationFolder="C:\Users\Ranazy\Desktop\Dead Cells 2\coremod\mods\$(ModName)\%(RecursiveDir)" />
+    <Copy SourceFiles="@(OutputResources)" DestinationFolder="C:\Users\Ranazy\Desktop\Dead Cells 2\coremod\mods\$(ModName)\Resources\%(RecursiveDir)" />
+  </Target>
+
+</Project>

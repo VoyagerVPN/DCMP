@@ -1,0 +1,28 @@
+{
+  "dcmp_menu_play_online": "Play Online",
+  "dcmp_menu_multiplayer": "Multiplayer",
+  "dcmp_menu_host": "Host Game",
+  "dcmp_menu_connect": "Connect",
+  "dcmp_menu_back": "Back",
+  "dcmp_menu_stop_server": "Back (Stop Server)",
+  "dcmp_menu_disconnect": "Back (Disconnect)",
+  "dcmp_menu_start_game": "Start Game",
+  "dcmp_lobby_title": "::name::'s Lobby",
+  "dcmp_lobby_syncing": "Syncing...",
+  "dcmp_lobby_connecting": "Connecting...",
+  "dcmp_lobby_players_count": "Players: ::count::",
+  "dcmp_menu_change_port": "Port: ::port::",
+  "dcmp_menu_change_name": "Nick: ::name::",
+  "dcmp_menu_target_ip": "IP: ::ip::",
+  
+  "dcmp_help_host": "Create a new lobby and wait for players",
+  "dcmp_help_connect": "Join an existing lobby via IP",
+  "dcmp_help_ip": "Set the target server IP address",
+  "dcmp_help_port": "Set the target server port",
+  "dcmp_help_nick": "Set your display name in lobby",
+  "dcmp_help_back": "Return to main menu",
+  "dcmp_help_start": "Start the game session",
+  "dcmp_help_stop": "Stop the server and close lobby",
+  "dcmp_help_disconnect": "Disconnect from lobby",
+  "dcmp_menu_save": "Save"
+}

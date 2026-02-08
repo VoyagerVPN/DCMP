@@ -1,0 +1,28 @@
+{
+  "dcmp_menu_play_online": "Играть по сети",
+  "dcmp_menu_multiplayer": "Мультиплеер",
+  "dcmp_menu_host": "Создать игру",
+  "dcmp_menu_connect": "Подключиться",
+  "dcmp_menu_back": "Назад",
+  "dcmp_menu_stop_server": "Назад (Закрыть лобби)",
+  "dcmp_menu_disconnect": "Назад (Отключиться)",
+  "dcmp_menu_start_game": "Начать игру",
+  "dcmp_lobby_title": "Лобби ::name::",
+  "dcmp_lobby_syncing": "Синхронизация...",
+  "dcmp_lobby_connecting": "Подключение...",
+  "dcmp_lobby_players_count": "Игроков: ::count::",
+  "dcmp_menu_change_port": "Порт: ::port::",
+  "dcmp_menu_change_name": "Ник: ::name::",
+  "dcmp_menu_target_ip": "IP: ::ip::",
+  
+  "dcmp_help_host": "Создать новое лобби",
+  "dcmp_help_connect": "Присоединиться к существующему лобби по IP",
+  "dcmp_help_ip": "Указать целевой IP адрес сервера",
+  "dcmp_help_port": "Указать целевой порт сервера",
+  "dcmp_help_nick": "Указать ваше имя в лобби",
+  "dcmp_help_back": "Вернуться в главное меню",
+  "dcmp_help_start": "Начать игру с текущими игроками",
+  "dcmp_help_stop": "Остановить сервер и закрыть лобби",
+  "dcmp_help_disconnect": "Отключиться от лобби",
+  "dcmp_menu_save": "Сохранить"
+}
